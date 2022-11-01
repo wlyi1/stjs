@@ -8,10 +8,10 @@ st.caption("polling kehidupan merupakan platform untuk ngasih tau ke masyarakat 
 st.subheader("Apakah pasanganmu saat ini adalah yang terbaik?")
 col1, col2 = st.columns(2)
 
-if 'ya' not in session_state:
+if 'ya' not in st.session_state:
     st.session_state.ya = 0
     
-if 'tidak' not in session_state:
+if 'tidak' not in st.session_state:
     st.session_state.tidak = 0
 
 with col1:

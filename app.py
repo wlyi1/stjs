@@ -6,7 +6,7 @@ import time
 st.title('Polling Kehidupan')
 st.caption("polling kehidupan merupakan platform untuk ngasih tau ke masyarakat tentang fenomena kehidupan apa adanya")
 st.subheader("Apakah pasanganmu saat ini adalah yang terbaik?")
-col1, col2, st.columns(2)
+col1, col2 = st.columns(2)
 ya = 0
 tidak = 0
 with col1:

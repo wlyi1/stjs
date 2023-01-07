@@ -5,7 +5,7 @@ import time
 
 
 st.title('Katanya?!')
-st.caption("ehh tau ga sih katanya ini? katanya itu? ahh coba lo buktikan dah di sini")
+st.write("ehh tau ga sih katanya ini? katanya itu? ahh coba lo buktikan dah di sini")
 st.subheader("Apakah pasanganmu saat ini adalah yang terbaik?")
 col1, col2 = st.columns(2)
 

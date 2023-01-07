@@ -2,13 +2,10 @@ import streamlit as st
 #from streamlit_js_eval import streamlit_js_eval, copy_to_clipboard, create_share_link, get_geolocation
 import json
 import time
-from streamlit_disqus import st_disqus
-
-st_disqus("streamlit-disqus-demo")
 
 
-st.title('Polling Kehidupan')
-st.caption("polling kehidupan merupakan platform untuk ngasih tau ke masyarakat tentang fenomena kehidupan apa adanya")
+st.title('Katanya?!')
+st.caption("ehh tau ga sih katanya ini? katanya itu? ahh coba lo buktikan dah di sini")
 st.subheader("Apakah pasanganmu saat ini adalah yang terbaik?")
 col1, col2 = st.columns(2)
 

@@ -29,7 +29,7 @@ with st.form(key='form1'):
     st.subheader("Apakah pasanganmu adalah yang terbaik? 🫢")
     option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
     cerita = st.text_area(label='Ceritanya gimana')
-    submit_button = st.form_submit_button(label='Kirim')
+    submit_button = st.form_submit_button(label='Kirim', clear_on_submit=True)
     if submit_button:
         col1.add({'nama' : name, "option": option, "tanggal": hari, "cerita": cerita})
         st.write('Terimakasih 👍')

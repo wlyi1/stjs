@@ -18,39 +18,20 @@ db = firestore.Client(credentials=creds, project="katanya-85289")
 
 
 st.title('Katanya?!')
-st.write("Ehh tau ga sih katanya ini? katanya itu? ahh coba lo buktiin di mari dah! 😮‍💨 ")
+st.write("Ehh tau ga sih katanya bla bla bla ahh coba lo buktiin di mari dah! 😮‍💨 ")
 
 with st.form(key='form1'):
-    st.subheader("Apakah pasanganmu saat ini adalah yang terbaik? 🫢")
+    #database references
+    db1 = firestore.Client(credentials=creds, project="testrandom1-6cf06")
+    col1 = db.collection('story')
+
+    st.subheader("Apakah pasanganmu adalah yang terbaik? 🫢")
     cols1, cols2 = st.columns(2)
+    st.radio(('Iya', 'Engga'))
     agree = cols1.checkbox('Iya')
     disagree = cols2.checkbox('Engga')
     text_input = st.text_area(label='Ceritanya gimana')
     submit_button = st.form_submit_button(label='Kirim')
-
-    
-
-
-'''col1, col2 = st.columns(2)
-
-if 'ya' not in st.session_state:
-    st.session_state.ya = 0
-    
-if 'tidak' not in st.session_state:
-    st.session_state.tidak = 0
-
-with col1:
-    ya_but = st.button('Ya')
-    st.text_area('Kenapa bisa iya')
-    if ya_but:
-        st.session_state.ya +=1
-with col2:
-    tidak_but = st.button('Tidak')
-    st.text_area('Kenapa bisa tidak')
-    if tidak_but:
-        st.session_state.tidak += 1
-       
-    
-st.write(st.session_state.ya)
-st.write(st.session_state.tidak)
-'''
+    if submit_button:
+        col1.add({"Option": nama, "tanggal": tgl_random, "cerita": cerita})
+        st.write('Terimakasih 👍')

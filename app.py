@@ -45,7 +45,7 @@ st.write(data)
 for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
     cerita_list = list(j.split(" "))
     if k == 'Iya':
-        st.info(f'**{i.capitalize()}: {" ".join(cerita_list[:4])}  -- {l.strftime("%Y-%m-%d")}**')
+        st.info(f'**{i.capitalize()}: {" ".join(cerita_list[:4])}  ({l.strftime("%Y-%m-%d")})**')
     else:
-        st.success(f'**{i.capitalize()} : {" ".join(cerita_list[:4])}  -- {l.strftime("%Y-%m-%d")}**')
+        st.success(f'**{i.capitalize()} : {" ".join(cerita_list[:4])}  -- ({l.strftime("%Y-%m-%d")})**')
     st.write(j)

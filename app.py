@@ -16,22 +16,20 @@ key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="katanya-85289")
 
+hari = dt.today().strftime('%Y-%m-%d')
 
 st.title('Katanya?!')
 st.write("Ehh tau ga sih katanya bla bla bla ahh coba lo buktiin di mari dah! 😮‍💨 ")
 
 with st.form(key='form1'):
     #database references
-    db1 = firestore.Client(credentials=creds, project="testrandom1-6cf06")
-    col1 = db.collection('story')
+    db1 = firestore.Client(credentials=creds, project="katanya-85289")
+    col1 = db.collection('pasangan')
 
     st.subheader("Apakah pasanganmu adalah yang terbaik? 🫢")
-    cols1, cols2 = st.columns(2)
-    st.radio(' ', ('Iya', 'Engga'))
-    agree = cols1.checkbox('Iya')
-    disagree = cols2.checkbox('Engga')
-    text_input = st.text_area(label='Ceritanya gimana')
+    option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
+    cerita = st.text_area(label='Ceritanya gimana')
     submit_button = st.form_submit_button(label='Kirim')
     if submit_button:
-        col1.add({"Option": nama, "tanggal": tgl_random, "cerita": cerita})
+        col1.add({"option": option, "tanggal": hari, "cerita": cerita})
         st.write('Terimakasih 👍')

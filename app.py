@@ -43,8 +43,9 @@ data = pd.DataFrame(list_random)
 data = data.sort_values(by=['tanggal'], ascending=False)
 st.write(data)
 for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
+    cerita_list = list(j.split(" "))
     if k == 'Iya':
-        st.info(f'**Cerita dari {i.capitalize()} katanya iya -- {l.strftime("%Y-%m-%d %H:%M")}**')
+        st.info(f'**{i.capitalize()}: {" ".join(cerita_list[:4])}  -- {l.strftime("%Y-%m-%d")}**')
     else:
-        st.success(f'**Cerita dari {i.capitalize()} katanya engga -- {l.strftime("%Y-%m-%d %H:%M")}**')
+        st.success(f'**{i.capitalize()} : {" ".join(cerita_list[:4])}  -- {l.strftime("%Y-%m-%d")}**')
     st.write(j)

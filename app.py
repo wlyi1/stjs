@@ -23,7 +23,7 @@ st.image(image1)
 
 hari = dt.now() #.strftime('%Y-%m-%d %H:%M:%S')
 
-st.title('Katanya?')
+st.header("Apakah pasanganmu adalah yang terbaik? 🥰")
 st.caption("Memiliki pasangan bagi kebanyakan orang membuatnya menjadi lebih bahagia dan hidupnya lebih berwarna. \
 Tapi ada yang bilang setelah punya pasangan malah membuat hidupnya makin merana dan tragis dibandingkan ketika masih single\
     Jadi bagaimana denganmu? Bisakah kau ceritakan apa adanya sehingga orang lain dapat belajar dan memahami dari pengalaman kamu?")
@@ -33,7 +33,7 @@ with st.form(key='form1', clear_on_submit=True):
     #db1 = firestore.Client(credentials=creds, project="katanya-85289")
     col1 = db.collection('pasangan')
     name = st.text_input('Nama/akronim/samaran/panggilan : ')
-    st.subheader("Apakah pasanganmu adalah yang terbaik? 🥰")
+    st.write("Apakah pasanganmu adalah yang terbaik? 🥰")
     option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
     cerita = st.text_area(label='Ceritanya gimana')
     submit_button = st.form_submit_button(label='Kirim')

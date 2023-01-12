@@ -43,7 +43,7 @@ data = pd.DataFrame(list_random)
 data = data.sort_values(by=['tanggal'], ascending=False)
 st.write(data)
 for i,j,k in zip(data['nama'], data['cerita'], data['option']):
-    if k == 'Iya'
+    if k == 'Iya':
         st.markdown(f'Cerita dari {i} katanya iya')
     else:
         st.markdown(f'Cerita dari {i} katanya engga')

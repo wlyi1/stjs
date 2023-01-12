@@ -1,13 +1,39 @@
 import streamlit as st
-#from streamlit_js_eval import streamlit_js_eval, copy_to_clipboard, create_share_link, get_geolocation
 import json
 import time
+import streamlit as st
+from google.cloud import firestore
+from google.oauth2 import service_account
+from google.cloud.firestore import Client
+import random
+import datetime
+from datetime import datetime as dt
+import pandas as pd
+import streamlit.components.v1 as components
+from streamlit.components.v1 import html
+
+key_dict = json.loads(st.secrets["textkey"])
+creds = service_account.Credentials.from_service_account_info(key_dict)
+db = firestore.Client(credentials=creds, project="katanya-85289")
 
 
 st.title('Katanya?!')
 st.write("ehh tau ga sih katanya ini? katanya itu? ahh coba lo buktikan dah di sini")
 st.subheader("Apakah pasanganmu saat ini adalah yang terbaik?")
-col1, col2 = st.columns(2)
+
+with st.form(ley='form1'):
+    cols1, cols2 = st.columns(2)
+    agree = cols1.checkbox('Iya')
+    disagree = cols2.checkbox('Engga')
+    text_input = st.text_area(label='Ceritanya gimana')
+    submit_button = st.form_submit_button(label='Kirim')
+
+    submitted = st.form_submit_button("Submit")
+
+
+
+
+'''col1, col2 = st.columns(2)
 
 if 'ya' not in st.session_state:
     st.session_state.ya = 0
@@ -29,3 +55,4 @@ with col2:
     
 st.write(st.session_state.ya)
 st.write(st.session_state.tidak)
+'''

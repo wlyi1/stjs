@@ -44,7 +44,7 @@ data = data.sort_values(by=['tanggal'], ascending=False)
 st.write(data)
 for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
     if k == 'Iya':
-        st.markdown(f'**Cerita dari {i.capitalize()} katanya iya - {l} **')
+        st.markdown(f'**Cerita dari {i.capitalize()} katanya iya - {l}**')
     else:
         st.markdown(f'**Cerita dari **{i}** katanya engga - {l}**')
     st.write(j)

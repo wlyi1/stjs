@@ -42,9 +42,9 @@ list_random = list(map(lambda x: x.to_dict(), datas))
 data = pd.DataFrame(list_random)
 data = data.sort_values(by=['tanggal'], ascending=False)
 st.write(data)
-for i,j,k in zip(data['nama'], data['cerita'], data['option']):
+for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
     if k == 'Iya':
-        st.markdown(f'**Cerita dari {i} katanya iya**')
+        st.markdown(f'**Cerita dari {i.capitalize()} katanya iya - {l} **')
     else:
-        st.markdown(f'**Cerita dari **{i}** katanya engga**')
+        st.markdown(f'**Cerita dari **{i}** katanya engga - {l}**')
     st.write(j)

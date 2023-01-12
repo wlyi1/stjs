@@ -21,7 +21,7 @@ st.title('Katanya?!')
 st.write("ehh tau ga sih katanya ini? katanya itu? ahh coba lo buktikan dah di sini")
 st.subheader("Apakah pasanganmu saat ini adalah yang terbaik?")
 
-with st.form(ley='form1'):
+with st.form(key='form1'):
     cols1, cols2 = st.columns(2)
     agree = cols1.checkbox('Iya')
     disagree = cols2.checkbox('Engga')

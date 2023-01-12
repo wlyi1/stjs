@@ -18,19 +18,17 @@ db = firestore.Client(credentials=creds, project="katanya-85289")
 
 
 st.title('Katanya?!')
-st.write("ehh tau ga sih katanya ini? katanya itu? ahh coba lo buktikan dah di sini")
-st.subheader("Apakah pasanganmu saat ini adalah yang terbaik?")
+st.write("Ehh tau ga sih katanya ini? katanya itu? ahh coba lo buktiin di mari dah!")
 
 with st.form(key='form1'):
     cols1, cols2 = st.columns(2)
+    st.subheader("Apakah pasanganmu saat ini adalah yang terbaik?")
     agree = cols1.checkbox('Iya')
     disagree = cols2.checkbox('Engga')
     text_input = st.text_area(label='Ceritanya gimana')
     submit_button = st.form_submit_button(label='Kirim')
 
-    submitted = st.form_submit_button("Submit")
-
-
+    
 
 
 '''col1, col2 = st.columns(2)

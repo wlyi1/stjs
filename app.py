@@ -23,7 +23,7 @@ st.write("Ehh tau ga sih katanya bla bla bla ahh coba lo buktiin di mari dah! �
 
 with st.form(key='form1'):
     #database references
-    db1 = firestore.Client(credentials=creds, project="katanya-85289")
+    #db1 = firestore.Client(credentials=creds, project="katanya-85289")
     col1 = db.collection('pasangan')
 
     st.subheader("Apakah pasanganmu adalah yang terbaik? 🫢")
@@ -33,3 +33,11 @@ with st.form(key='form1'):
     if submit_button:
         col1.add({"option": option, "tanggal": hari, "cerita": cerita})
         st.write('Terimakasih 👍')
+
+st.subheader('Cerita Terbaru')
+
+doc = db.collection('pasangan')
+datas = list(doc.stream())
+list_random = list(map(lambda x: x.to_dict(), datas))
+data = pd.DataFrame(list_random)
+st.write(data)

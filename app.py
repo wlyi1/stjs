@@ -46,5 +46,5 @@ for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']
     if k == 'Iya':
         st.info(f'**Cerita dari {i.capitalize()} katanya iya -- {l.strftime("%Y-%m-%d %H:%M")}**')
     else:
-        st.markdown(f'**Cerita dari **{i.capitalize()}** katanya engga -- {l.strftime("%Y-%m-%d %H:%M")}**')
+        st.success(f'**Cerita dari **{i.capitalize()}** katanya engga -- {l.strftime("%Y-%m-%d %H:%M")}**')
     st.write(j)

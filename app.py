@@ -27,7 +27,7 @@ with st.form(key='form1'):
 
     st.subheader("Apakah pasanganmu adalah yang terbaik? 🫢")
     cols1, cols2 = st.columns(2)
-    st.radio(('Iya', 'Engga'))
+    st.radio(' ', ('Iya', 'Engga'))
     agree = cols1.checkbox('Iya')
     disagree = cols2.checkbox('Engga')
     text_input = st.text_area(label='Ceritanya gimana')

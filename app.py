@@ -11,17 +11,22 @@ from datetime import datetime as dt
 import pandas as pd
 import streamlit.components.v1 as components
 from streamlit.components.v1 import html
+from PIL import Image
+from PIL import ImageDraw
 
 key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="katanya-85289")
+
+image1 = 'https://raw.githubusercontent.com/wlyi1/stjs/main/logo.png'
+st.image(image1)
 
 hari = dt.now() #.strftime('%Y-%m-%d %H:%M:%S')
 
 st.title('Katanya?')
 st.caption("Memiliki pasangan bagi kebanyakan orang membuatnya menjadi lebih bahagia dan hidupnya lebih berwarna. \
 Tapi ada yang bilang setelah punya pasangan malah membuat hidupnya makin merana dan tragis dibandingkan ketika masih single\
-    Jadi bagaimana denganmu? bisakah kau ceritakan apa adanya sehingga orang lain dapat belajar dan memahami dari pengalaman orang lain")
+    Jadi bagaimana denganmu? Bisakah kau ceritakan apa adanya sehingga orang lain dapat belajar dan memahami dari pengalaman kamu?")
 
 with st.form(key='form1', clear_on_submit=True):
     #database references

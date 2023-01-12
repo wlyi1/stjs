@@ -44,7 +44,7 @@ data = data.sort_values(by=['tanggal'], ascending=False)
 st.write(data)
 for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
     if k == 'Iya':
-        st.info(f'**Cerita dari {i.capitalize()} katanya iya -- {l.strftime("%Y-%m-%d %H:%M %p")}**')
+        st.info(f'**Cerita dari {i.capitalize()} katanya iya -- {l.strftime("%Y-%m-%d %H:%M")}**')
     else:
         st.success(f'**Cerita dari **{i.capitalize()}** katanya engga -- {l.strftime("%Y-%m-%d %H:%M")}**')
     st.write(j)

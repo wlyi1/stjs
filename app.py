@@ -41,5 +41,5 @@ datas = list(doc.stream())
 list_random = list(map(lambda x: x.to_dict(), datas))
 data = pd.DataFrame(list_random)
 st.write(data)
-for i in data['cerita'].values():
+for i in data['cerita']:
     st.write(i)

@@ -41,7 +41,7 @@ datas = list(doc.stream())
 list_random = list(map(lambda x: x.to_dict(), datas))
 data = pd.DataFrame(list_random)
 data = data.sort_values(by=['tanggal'], ascending=False)
-st.write(data)
+
 for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
     cerita_list = list(j.split(" "))
     if k == 'Iya':

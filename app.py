@@ -13,6 +13,7 @@ import streamlit.components.v1 as components
 from streamlit.components.v1 import html
 from PIL import Image
 from PIL import ImageDraw
+from katanya import pasangan, nikah
 
 key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
@@ -21,7 +22,14 @@ db = firestore.Client(credentials=creds, project="katanya-85289")
 image1 = 'https://raw.githubusercontent.com/wlyi1/stjs/main/logo.png'
 st.image(image1)
 
-hari = dt.now() #.strftime('%Y-%m-%d %H:%M:%S')
+post = {'pasangan' : pasangan(), 'nikah': nikah()}
+
+opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah'])
+post[f'opt']
+
+
+
+'''hari = dt.now() #.strftime('%Y-%m-%d %H:%M:%S')
 
 st.header("Apakah pasanganmu adalah yang terbaik? 🥰")
 st.caption("Memiliki pasangan bagi kebanyakan orang membuatnya menjadi lebih bahagia dan hidupnya lebih berwarna. \
@@ -55,4 +63,4 @@ for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']
         st.info(f'**{i.capitalize()}: {" ".join(cerita_list[:7])}  ({l.strftime("%Y-%m-%d")})**')
     else:
         st.success(f'**{i.capitalize()} : {" ".join(cerita_list[:7])}  -- ({l.strftime("%Y-%m-%d")})**')
-    st.write(j)
+    st.write(j)'''

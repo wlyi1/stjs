@@ -14,6 +14,12 @@ from streamlit.components.v1 import html
 from PIL import Image
 from PIL import ImageDraw
 
+
+key_dict = json.loads(st.secrets["textkey"])
+creds = service_account.Credentials.from_service_account_info(key_dict)
+db = firestore.Client(credentials=creds, project="katanya-85289")
+
+
 def pasangan():
     hari = dt.now() #.strftime('%Y-%m-%d %H:%M:%S')
 

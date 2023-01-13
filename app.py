@@ -22,10 +22,13 @@ db = firestore.Client(credentials=creds, project="katanya-85289")
 image1 = 'https://raw.githubusercontent.com/wlyi1/stjs/main/logo.png'
 st.image(image1)
 
-post = {'pasangan' : pasangan(), 'nikah': nikah()}
+#post = {'pasangan' : pasangan(), 'nikah': nikah()}
 
 opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah'])
-post[f'opt']
+if opt == 'pasangan':
+    pasangan()
+else:
+    nikah()
 
 
 

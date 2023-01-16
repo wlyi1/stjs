@@ -19,8 +19,12 @@ image1 = 'https://raw.githubusercontent.com/wlyi1/stjs/main/logo.png'
 st.image(image1)
 
 opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah'])
-if opt == 'pasangan':
+match opt:
+    case 'pasangan' : pasangan()
+    case "nikah" : nikah()
+
+"""if opt == 'pasangan':
     pasangan()
 elif opt == 'nikah':
-    nikah()
+    nikah()"""
 

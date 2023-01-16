@@ -21,6 +21,6 @@ st.image(image1)
 opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah'])
 if opt == 'pasangan':
     pasangan()
-else:
+elif opt = 'nikah':
     nikah()
 

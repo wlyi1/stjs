@@ -48,9 +48,9 @@ def pasangan():
     data = pd.DataFrame(list_random)
     data = data.sort_values(by=['tanggal'], ascending=False)
     df = data['option'].value_counts().rename_axis('option').reset_index(name='counts')
-    st.write(df)
+    #st.write(df)
     fig1, ax1 = plt.subplots(figsize=(3,3))
-    ax1.pie(df.counts, colors = 'winter', rotatelables=True, labels=df.option, labeldistance = 0.8)
+    ax1.pie(df.counts, colors = 'winter', rotatelabels=True, labels=df.option, labeldistance = 0.8)
     st.pyplot(fig1)
 
     for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):

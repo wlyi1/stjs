@@ -51,7 +51,7 @@ def pasangan():
     st.write(df)
     fig1, ax1 = plt.subplots()
     ax1.pie(df.counts, labels=df.option)
-    st.pyplot(ax1)
+    st.pyplot(fig1)
 
     for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
         cerita_list = list(j.split(" "))

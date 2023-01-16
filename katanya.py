@@ -13,7 +13,8 @@ import streamlit.components.v1 as components
 from streamlit.components.v1 import html
 from PIL import Image
 from PIL import ImageDraw
-
+import plotly.figure_factory as ff
+import plotly.graph_objects as go
 
 key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
@@ -47,6 +48,12 @@ def pasangan():
     list_random = list(map(lambda x: x.to_dict(), datas))
     data = pd.DataFrame(list_random)
     data = data.sort_values(by=['tanggal'], ascending=False)
+    df = data['option'].value_counts().rename_axis('option').reset_index(name='counts')
+    st.write(df)
+    fig_target = go.Figure(data=[go.Pie(labels=df.option,
+                                    values=df['counts'],
+                                    hole=.3)])
+    st.plotly_chart(fig_target)
 
     for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
         cerita_list = list(j.split(" "))

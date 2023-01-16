@@ -50,7 +50,7 @@ def pasangan():
     #st.write(df)
     fig1, ax1 = plt.subplots(figsize=(3,3))
     ax1.pie(df.counts)
-    plt.legend(fig1, label = labels, loc='best')
+    plt.legend(fig1, label = df.option, loc='best')
     st.markdown("**Persentase Polling**")
     st.pyplot(fig1)
 

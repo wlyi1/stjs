@@ -49,8 +49,8 @@ def pasangan():
     df = data['option'].value_counts().rename_axis('option').reset_index(name='counts')
     #st.write(df)
     fig1, ax1 = plt.subplots(figsize=(3,3))
-    ax1.pie(df.counts)
-    #plt.legend(fig1, label = df.option, loc='best')
+    ax1.pie(df.counts, labels = df.option, startangle=90)
+    
     st.markdown("**Persentase Polling**")
     st.pyplot(fig1)
 

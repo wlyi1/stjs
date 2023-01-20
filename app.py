@@ -15,7 +15,7 @@ from PIL import Image
 from PIL import ImageDraw
 from katanya import pasangan, nikah
 
-image1 = 'https://raw.githubusercontent.com/wlyi1/stjs/main/logo.png'
+image1 = 'https://raw.githubusercontent.com/wlyi1/stjs/main/tema.png'
 st.image(image1)
 
 opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah'])

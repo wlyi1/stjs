@@ -23,8 +23,3 @@ match opt:
     case 'pasangan' : pasangan()
     case "nikah" : nikah()
 
-"""if opt == 'pasangan':
-    pasangan()
-elif opt == 'nikah':
-    nikah()"""
-

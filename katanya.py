@@ -67,7 +67,7 @@ def pasangan():
 def nikah():
     hari = dt.now() #.strftime('%Y-%m-%d %H:%M:%S')
 
-    st.header("Apakah pernikahanmu bahagia? 🥰")
+    st.header("Apakah pernikahanmu bahagia? 👫")
     st.caption("Katanya pernikahan membuat hidup kita menjadi lengkap dan indah. Ehm tapi ada yang bilang \
     hidupnya hancur setelah menikah. Oke, jadi bagaimana denganmu apakah setelah menikah bahagia?")
 
@@ -75,7 +75,7 @@ def nikah():
         
         col1 = db.collection('nikah')
         name = st.text_input('Nama/akronim/samaran/panggilan : ')
-        st.write("Apakah pernikahanmu bahagia? 🥰")
+        st.write("Apakah pernikahanmu bahagia? 👫")
         option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
         cerita = st.text_area(label='Cerita')
         submit_button = st.form_submit_button(label='Kirim')
@@ -83,14 +83,23 @@ def nikah():
             col1.add({'nama' : name, "option": option, "tanggal": hari, "cerita": cerita})
             st.write('Terimakasih 👍')
 
-    st.subheader('Cerita Terbaru')
+
 
     doc = db.collection('nikah')
     datas = list(doc.stream())
     list_random = list(map(lambda x: x.to_dict(), datas))
     data = pd.DataFrame(list_random)
     data = data.sort_values(by=['tanggal'], ascending=False)
+    df = data['option'].value_counts().rename_axis('option').reset_index(name='counts')
 
+    st.subheader('Cerita Terbaru')
+
+    fig1, ax1 = plt.subplots(figsize=(3,3))
+    ax1.pie(df.counts, autopct='%1.1f%%', labels = df.option, colors = ['#2C74B3', '#EB5353'], startangle=90)
+    
+    st.subheader("**Persentase Polling**")
+    st.pyplot(fig1)
+    
     for i,j,k,l in zip(data['nama'], data['cerita'], data['option'], data['tanggal']):
         cerita_list = list(j.split(" "))
         if k == 'Iya':

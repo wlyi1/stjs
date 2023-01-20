@@ -18,8 +18,9 @@ from katanya import *
 image1 = 'https://raw.githubusercontent.com/wlyi1/stjs/main/banner.png'
 st.image(image1)
 
-opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah', 'ortu'])
+opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah', 'ortu', 'kerja'])
 match opt:
     case 'pasangan' : pasangan()
     case "nikah" : nikah()
     case "ortu" : ortu()
+    case "kerja" : kerja()

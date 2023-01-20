@@ -120,7 +120,7 @@ def ortu():
         name = st.text_input('Nama/akronim/samaran/panggilan : ')
         st.write("Apakah orang tuamu baik? 🧓🏼👵🏼")
         option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
-        cerita = st.text_area(label='Cerita')
+        cerita = st.text_area(label='Cerita', height=300)
         submit_button = st.form_submit_button(label='Kirim')
         if submit_button:
             col1.add({'nama' : name, "option": option, "tanggal": hari, "cerita": cerita})

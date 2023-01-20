@@ -51,7 +51,7 @@ def pasangan():
     fig1, ax1 = plt.subplots(figsize=(3,3))
     ax1.pie(df.counts, labels = df.option, colors = ['#2C74B3', '#EB5353'], startangle=90)
     
-    st.markdown("**Persentase Polling**")
+    st.subheader("**Persentase Polling**")
     st.pyplot(fig1)
 
     st.subheader('Ceritanya')

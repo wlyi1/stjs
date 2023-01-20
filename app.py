@@ -13,13 +13,13 @@ import streamlit.components.v1 as components
 from streamlit.components.v1 import html
 from PIL import Image
 from PIL import ImageDraw
-from katanya import pasangan, nikah
+from katanya import *
 
 image1 = 'https://raw.githubusercontent.com/wlyi1/stjs/main/banner.png'
 st.image(image1)
 
-opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah'])
+opt = st.selectbox('Pilih katanya: ', ['pasangan', 'nikah', 'ortu'])
 match opt:
     case 'pasangan' : pasangan()
     case "nikah" : nikah()
-
+    case "ortu" : ortu()

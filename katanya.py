@@ -34,7 +34,7 @@ def pasangan():
         name = st.text_input('Nama/akronim/samaran/panggilan : ')
         st.write("Apakah pasanganmu adalah yang terbaik? 🥰")
         option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
-        cerita = st.text_area(label='Ceritanya gimana')
+        cerita = st.text_area(label='Ceritanya')
         submit_button = st.form_submit_button(label='Kirim')
         if submit_button:
             col1.add({'nama' : name, "option": option, "tanggal": hari, "cerita": cerita})
@@ -77,7 +77,7 @@ def nikah():
         name = st.text_input('Nama/akronim/samaran/panggilan : ')
         st.write("Apakah pernikahanmu bahagia? 🥰")
         option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
-        cerita = st.text_area(label='Cerita dikit disini')
+        cerita = st.text_area(label='Cerita')
         submit_button = st.form_submit_button(label='Kirim')
         if submit_button:
             col1.add({'nama' : name, "option": option, "tanggal": hari, "cerita": cerita})
